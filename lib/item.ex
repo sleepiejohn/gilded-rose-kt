@@ -34,11 +34,14 @@ defmodule Item do
   defp inc_quality_by(item, inc_quality) do
     new_quality = item.quality + double_quality(item, inc_quality)
 
-    cond do
-      new_quality > 50 -> 50
-      new_quality < 0 -> 0
-      true -> new_quality
-    end
+    quality =
+      cond do
+        new_quality > 50 -> 50
+        new_quality < 0 -> 0
+        true -> new_quality
+      end
+
+    %Item{item | quality: quality}
   end
 
   # doubles the incrementing quality when the date of sell has passed
