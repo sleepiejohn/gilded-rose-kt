@@ -1,7 +1,7 @@
 defmodule Item do
   defstruct name: nil, sell_in: nil, quality: nil
 
-  def update(%Item{name: "Aged Brie"} = item), do: update(item, -1)
+  def update(%Item{name: "Aged Brie"} = item), do: update(item, 1)
 
   def update(%Item{name: "Sulfuras, Hand of Ragnaros"} = item), do: item
 
